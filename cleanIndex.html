@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Clean Truth or Dare </title> 
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Roboto&family=Source+Code+Pro:wght@500&display=swap" rel="stylesheet">
+
+<style>
+      * {
+  box-sizing: border-box;
+}
+
+body{
+  background-color: #EBE6F8;
+  display: block; 
+  position: relative; 
+  max-width: 100vw; 
+  min-height: 100vh; 
+  overflow: hidden; 
+  margin: 0; 
+  padding-top: 10px;
+  padding-bottom: 10px; 
+}
+
+.header{
+  font-family:'Source Code Pro';
+  text-align: center;
+  font-size: 36px;
+  line-height: 1em;
+  color: #1D1828;
+  padding-bottom:0px;
+}
+
+p{
+  font-family: 'Source Code Pro';
+  padding-left: 20%;
+  padding-right: 20%;
+  padding-bottom: 10px;
+  text-align: center;
+  color:#1D1828;
+  margin-top:-20px;
+  margin-bottom: 8vh;
+  font-size: 16px;
+}
+
+#paraContainer{
+    display: block;
+    width: 50vw;
+    height:40vh;
+    background-color: #ffffff;
+    margin: 0 auto;
+    margin-bottom: 5vh;
+    border-radius: 8px;
+    padding-top:20vh;
+    text-align: center;
+}
+
+#display{
+  font-family:'Roboto', sans-serif;
+  text-align: center;
+  color:#1D1828;
+  font-size: 38px;
+  vertical-align: middle;
+  width: 50%;
+  height: 50%;
+}
+
+.button{
+    display:flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    width:50vw;
+    text-align: center;
+    margin-bottom: 8vh;
+}
+
+.buttonDiv{
+    display: inline-block;
+    margin:0 auto;
+    text-align: center;
+}
+
+#truthButton{
+  background-color: #BFA5FA;
+  color:black;
+  width:200px;
+  height:50px;
+  border:none;
+  border-radius: 8px;
+  font-size: 20px;
+  font-weight: 600;
+  font-family: 'Source Code Pro';
+  text-decoration: none;
+  border:none;
+}
+
+
+#dareButton{
+  background-color: #FFA552;
+  color:black;
+  width:200px;
+  height:50px;
+  border:none;
+  border-radius: 8px;
+  font-size: 20px;
+  font-weight: 600;
+  font-family: 'Source Code Pro';
+  text-decoration: none;
+  border:none;
+}
+
+.floatLeft{
+    float:left;
+
+}
+
+.floatRight{
+    float:right;
+    
+}
+
+ #suggestSupport{
+  padding-left: 16px;
+  padding-right: 16px;
+  font-size: 14px;
+  font-family: 'Source Code Pro';
+}
+
+a:active{
+    text-decoration: none;
+    color:black;
+}
+
+a:hover{
+    text-decoration: none;
+    color:black;
+}
+
+.linkTo{
+    margin:0 auto;
+    text-align: center;
+    display: block;
+    margin-bottom: 5vh;
+    font-size: 14px;
+    font-family: 'Source Code Pro';
+}
+
+@media only screen and (max-width: 768px) {
+    .header{
+        font-size: 28px;
+    }
+    p{
+       font-size: 14px;
+       padding-left: 10%;
+       padding-right: 10%;
+       margin-bottom: 5vh;
+       margin-top:-16px;
+   }
+
+#paraContainer{
+       width:80vw;
+   }
+
+.button{
+text-align: center;
+display:flex;
+justify-content:space-evenly;
+}
+
+
+
+#truthButton{
+  width:150px;
+  height:50px;
+  border:none;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 600;
+  border:none;
+  margin-right: 50px;
+}
+
+#dareButton{
+    width:150px;
+  height:50px;
+  border:none;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 600;
+  border:none;
+}
+
+}
+
+ </style>
+
+</head>
+    
+    
+<body >
+
+  <h2 class="header">CLEAN TRUTH OR DARE </h2>
+  <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. 
+</p>
+
+<div class="section">
+
+<div id="paraContainer">
+
+    <p id="display">
+    </p>
+    
+</div>
+
+<div class= "button">
+   <div class="buttonDiv"> <button id="truthButton" type="button">TRUTH</button> </div>
+    <div class="buttonDiv" > <button id="dareButton" type="button">DARE</button> </div>
+</div>
+
+
+<a href="extremeIndex.html" class="linkTo">Go to Extreme Truth or Dare</a>
+
+<a id="suggestSupport" href="#" class="floatLeft">Suggest</a>
+<a id="suggestSupport" href = "#" class="floatRight">Support</a>
+
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
+<script>
+
+    //confetti javascript
+     class Progress {
+      constructor(param = {}) {
+        this.timestamp        = null;
+        this.duration         = param.duration || Progress.CONST.DURATION;
+        this.progress         = 0;
+        this.delta            = 0;
+        this.progress         = 0;
+        this.isLoop           = !!param.isLoop;
+    
+        this.reset();
+      }
+    
+      static get CONST() {
+        return {
+          DURATION : 1000
+        };
+      }
+    
+      reset() {
+        this.timestamp = null;
+      }
+    
+      start(now) {
+        this.timestamp = now;
+      }
+    
+      tick(now) {
+        if (this.timestamp) {
+          this.delta    = now - this.timestamp;
+          this.progress = Math.min(this.delta / this.duration, 1);
+    
+          if (this.progress >= 1 && this.isLoop) {
+            this.start(now);
+          }
+    
+          return this.progress;
+        } else {
+          return 0;
+        }
+      }
+    }
+    
+    class Confetti {
+      constructor(param) {
+        this.parent         = param.elm || document.body;
+        this.canvas         = document.createElement("canvas");
+        this.ctx            = this.canvas.getContext("2d");
+        this.width          = param.width  || this.parent.offsetWidth;
+        this.height         = param.height || this.parent.offsetHeight;
+        this.length         = param.length || Confetti.CONST.PAPER_LENGTH;
+        this.yRange         = param.yRange || this.height * 2;
+        this.progress       = new Progress({
+          duration : param.duration,
+          isLoop   : true
+        });
+        this.rotationRange  = typeof param.rotationLength === "number" ? param.rotationRange
+                                                                       : 10;
+        this.speedRange     = typeof param.speedRange     === "number" ? param.speedRange
+                                                                       : 10;
+        this.sprites        = [];
+    
+        this.canvas.style.cssText = [
+          "display: block",
+          "position: absolute",
+          "top: 0",
+          "left: 0",
+          "pointer-events: none"
+        ].join(";");
+    
+        this.render = this.render.bind(this);
+    
+        this.build();
+    
+        this.parent.appendChild(this.canvas);
+        this.progress.start(performance.now());
+    
+        requestAnimationFrame(this.render);
+      }
+    
+      static get CONST() {
+        return {
+            SPRITE_WIDTH  : 9,
+            SPRITE_HEIGHT : 16,
+            PAPER_LENGTH  : 100,
+            DURATION      : 8000,
+            ROTATION_RATE : 50,
+            COLORS        : [
+              "#EF5350",
+              "#EC407A",
+              "#AB47BC",
+              "#7E57C2",
+              "#5C6BC0",
+              "#42A5F5",
+              "#29B6F6",
+              "#26C6DA",
+              "#26A69A",
+              "#66BB6A",
+              "#9CCC65",
+              "#D4E157",
+              "#FFEE58",
+              "#FFCA28",
+              "#FFA726",
+              "#FF7043",
+              "#8D6E63",
+              "#BDBDBD",
+              "#78909C"
+            ]
+        };
+      }
+    
+      build() {
+        for (let i = 0; i < this.length; ++i) {
+          let canvas = document.createElement("canvas"),
+              ctx    = canvas.getContext("2d");
+    
+          canvas.width  = Confetti.CONST.SPRITE_WIDTH;
+          canvas.height = Confetti.CONST.SPRITE_HEIGHT;
+    
+          canvas.position = {
+            initX : Math.random() * this.width,
+            initY : -canvas.height - Math.random() * this.yRange
+          };
+    
+          canvas.rotation = (this.rotationRange / 2) - Math.random() * this.rotationRange;
+          canvas.speed    = (this.speedRange / 2) + Math.random() * (this.speedRange / 2);
+    
+          ctx.save();
+            ctx.fillStyle = Confetti.CONST.COLORS[(Math.random() * Confetti.CONST.COLORS.length) | 0];
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+          ctx.restore();
+    
+          this.sprites.push(canvas);
+        }
+      }
+    
+      render(now) {
+        let progress = this.progress.tick(now);
+    
+        this.canvas.width  = this.width;
+        this.canvas.height = this.height;
+    
+        for (let i = 0; i < this.length; ++i) {
+          this.ctx.save();
+            this.ctx.translate(
+              this.sprites[i].position.initX + this.sprites[i].rotation * Confetti.CONST.ROTATION_RATE * progress,
+              this.sprites[i].position.initY + progress * (this.height + this.yRange)
+            );
+            this.ctx.rotate(this.sprites[i].rotation);
+            this.ctx.drawImage(
+              this.sprites[i],
+              -Confetti.CONST.SPRITE_WIDTH * Math.abs(Math.sin(progress * Math.PI * 2 * this.sprites[i].speed)) / 2,
+              -Confetti.CONST.SPRITE_HEIGHT / 2,
+              Confetti.CONST.SPRITE_WIDTH * Math.abs(Math.sin(progress * Math.PI * 2 * this.sprites[i].speed)),
+              Confetti.CONST.SPRITE_HEIGHT
+            );
+          this.ctx.restore();
+        }
+    
+        requestAnimationFrame(this.render);
+      }
+    }
+    
+    (() => {
+      const DURATION = 8000,
+            LENGTH   = 120;
+    
+      new Confetti({
+        width    : window.innerWidth,
+        height   : window.innerHeight,
+        length   : LENGTH,
+        duration : DURATION
+      });
+    
+      setTimeout(() => {
+        new Confetti({
+          width    : window.innerWidth,
+          height   : window.innerHeight,
+          length   : LENGTH,
+          duration : DURATION
+        });
+      }, DURATION / 2);
+    })();
+   
+</script>
+
+<script>
+
+//truthordare function
+
+    $(document).ready(function(){
+
+    var truthArr=[
+"Did you ever drink before you were of the legal drinking age",
+"What is the craziest thing you have done while under the influence",
+"What was the last thing you searched for on your phone web browser",
+"If you had to choose between going naked or having your thoughts appear in thought bubbles above your head for everyone to read, which would you choose",
+"After you’ve dropped a piece of food, what’s the longest time you’ve left it on the ground and then ate it",
+"Have you ever tasted a booger",
+"What’s the first thing you would do if you woke up one day as the opposite sex",
+"If someone heard you snoring, would they say it’s obnoxiously loud",
+"Have you ever peed in a pool full of people",
+"Who do you think is the worst dressed person in this room",
+"Have you ever farted in an elevator",
+"True or false? You have a crush on an elderly person",
+"What is the largest amount of food you’ve eaten in one sitting",
+"Of the people in this room, who do you want to trade lives with for one day",
+"What are some things you think about when sitting on the toilet",
+"What is the most embarrassing situation you’ve ever been a part of",
+"Did you have an imaginary friend growing up",
+"Do you cover your eyes during a scary part in a movie",
+"Have you ever practiced kissing in a mirror",
+"What, if any, sport do you absolutely hate against popular opinion",
+"What is your guilty pleasure that you never tell anyone",
+"What is your worst or most embarrassing habit",
+"Has anyone ever walked in on you when taking a dump in the bathroom",
+"Have you ever had a major wardrobe malfunction while in public",
+"Have you ever accidentally walked into a wall or building",
+"Do you pick your nose when you’re alone",
+"How much older of an individual would you enter a relationship with",
+"Do you pee in the shower",
+"Have you ever peed yourself at school before",
+"What was your most embarrassing moment in public",
+"Have you ever farted loudly in class or another social setting",
+"Do you ever talk to yourself when you are alone",
+"What is your guilty pleasure",
+"You’re in a public restroom and just pooped, then you realized your stall has no toilet paper. What do you do",
+"What would be in your web history that you’d be embarrassed if someone saw",
+"Have you ever tried to take a sexy or naked picture of yourself",
+"Do you sleep with a stuffed animal or something else for comfort",
+"Do you drool in your sleep",
+"Do you talk in your sleep",
+"Who are you secretly attracted to",
+"Do you think kittens are cute",
+"Who do you like the least in this room and why",
+"What does your dream boy or girl look like",
+"What is your go-to song for the shower",
+"Who is the prettiest person in this room",
+"How would you rate your looks on a scale of 1 to 10",
+"What things do you not like about me",
+"What song do you enjoy in privacy",
+"What was the last thing you texted someone of the opposite sex",
+"If you were rescuing people from a burning building and you had to leave one person behind from this room, who would it be",
+"Have you ever accidentally revealed a friend’s secret",
+"Do you think that you and your current girlfriend or boyfriend will ever be married",
+"How often do you wash your undergarments",
+"Have you ever tasted ear wax",
+"Have you ever farted and then blamed someone else",
+"Have you ever tasted your sweat",
+"What is the most illegal thing you’ve ever done",
+"Who is your favorite person in your immediate family",
+"Would you trade your sibling in for a million dollars if there were no other consequences",
+"Would you trade in your dog for a million dollars",
+"What is your biggest pet peeve that other people do",
+"If you were to join the military what job do you think you’d enjoy the most",
+"If you were allowed to marry more than one person, would you? Who would you choose to marry",
+"Would you rather lose your sex organs forever or gain 200 pounds only in your stomach",
+"Would you choose to save 100 people without anyone knowing about it or not save them but have everyone praise you for it",
+"If you could only hear one song for the rest of your life, what would it be",
+"If you lost one day of your life every time you said a swear word, would you try not to do it",
+"Who in this room would be the worst person to date? Why",
+"Would you rather live with no internet or no A/C or heating",
+"What was your favorite childhood video game",
+"If someone offered you $1 million dollars to break up with your girlfriend/boyfriend, would you do it",
+"If you were reborn, what decade would you want to be born in",
+"If you could go back in time in erase one thing you said or did, what would it be",
+"Has your boyfriend or girlfriend ever embarrassed you",
+"Have you ever thought about cheating on your partner",
+"If you could suddenly become invisible, what would you do",
+"Have you ever been caught checking someone out",
+"What is your favorite alcoholic beverage",
+"Have you ever waved at someone thinking they saw you when really they didn’t? What did you do when you realized it",
+"What’s the longest time you’ve stayed in the bathroom, and why did you stay for that long",
+"What’s the most unflattering school picture of you",
+"Have you ever cried because you missed your parents so much",
+"Do you prefer a bath or a shower? Why",
+"Would you rather be caught picking your nose or picking a wedgie",
+"Describe the strangest dream you’ve ever had. Did you like it",
+"Have you ever posted something on social media that you regret",
+"What is your biggest and most irrational fear",
+"What is the scariest movie you have ever seen ",
+"Do you sing in the shower",
+"Have you ever ding dong ditched someone",
+"What is something you have done that has made you really proud",
+"The world ends next week and you can do anything you want (even if it’s illegal). What would you do",
+"Would you wear your shirt inside out for a whole day if someone paid you $100",
+"What salad dressing could you drink out of the bottle",
+"What is the most childish thing that you still do",
+"How far would you go to land the guy or girl of your dreams",
+"If you had to choose would you rather have a broken arm or a broken leg and why",
+"Tell us about a time you embarrassed yourself in front of a crush.",
+"Have you ever kept a library book",
+"Who is one person you pretend to like, but actually don’t",
+"What children’s movie could you watch over and over again",
+"Do you have bad foot odor",
+"Do you have any silly nicknames",
+"When was the last time you wet the bed",
+"How many pancakes have you eaten in a single sitting",
+"Have you ever accidentally hit something with your car",
+"If you had to make out with any Disney character, who would it be",
+",Have you ever watched a movie you knew you shouldn’t",
+"Have you ever wanted to try LARP (Live Action Role-Play)",
+"What app on your phone do you waste the most time on",
+"Have you ever pretended to be sick to get out of something If so, what was it",
+"What is the most food you’ve eaten in a single sitting",
+"What is the single most painful experience of your life",
+"Do you dance when you’re by yourself",
+"Would you have voted for or against Trump",
+"What song on the radio do you sing with every time it comes on",
+"Do you sleep with a stuffed animal",
+"Do you own a pair of footie pajamas",
+"What is the meanest thing you’ve ever said to someone",
+"Are you scared of the dark",
+"What ‘As seen on TV’ product do you secretly want to buy",
+"Do you still take bubble baths",
+"If you were home by yourself all day, what would you do",
+"How many selfies do you take a day",
+"Would you date your high school crush today",
+"What is something you’ve done to try to be ‘cooler’",
+"When was the last time you brushed your teeth",
+"How often do you wear the same outfit in a week",
+"Have you ever used self tanner",
+"What is your favorite breed of dog",
+"What do your favorite pajamas look like",
+"Do you have a security blanket",
+"Do you still have something you have cherished from childhood",
+"Have you ever eaten something off the floor",
+"Have you ever butt-dialed someone",
+"Do you like hanging out with your parents",
+"Do you prefer staying up late or going to bed early",
+"Have you ever got caught doing something you shouldn’t",
+"What part of your body do you love and which part do you hate",
+"Have you ever had lice",
+"Have you ever pooped your pants",
+"What is your favorite type of ice cream",
+"Do you lick your plate",
+"What is something that no one else knows about you",
+"Have you ever stolen anything",
+"When was the last time you lied",
+"When was the last time you cried",
+"What's your biggest fear",
+"What's your biggest fantasy",
+"What's something you're glad your mum doesn't know about you",
+"Have you ever cheated on someone",
+"What's the worst thing you've ever done",
+"What's a secret you've never told anyone",
+"Do you have a hidden talent",
+"Who was your first celebrity crush",
+"What are your thoughts on polyamory",
+"Have you ever cheated in an exam",
+"What's the most drunk you've ever been",
+"Have you ever broken the law",
+"What's the most embarrassing thing you've ever done",
+"What's your biggest insecurity",
+"What's the biggest mistake you've ever made",
+"What's the most disgusting thing you've ever done",
+"What's the worst thing anyone's ever done to you",
+"Have you ever had a run in with the law",
+"What's your worst habit",
+"What's the worst thing you've ever said to anyone",
+"Have you ever been caught doing something you shouldn't have",
+"What's the worst date you've been on",
+"What's your biggest regret",
+"What's the biggest misconception about you",
+"Why did your last relationship break down",
+"Have you ever lied to get out of a bad date and why",
+"What's the most trouble you've been in",
+"Do you enjoy watching horror movies alone",
+"Have you ever brought your girlfriend home whilst your parents were away",
+"Do you still sleep in your parents’ room",
+"Do you envy your brother or sister",
+"Have you ever gotten scratched while in some random car",
+"Did you get caught stealing something ever",
+"What’s your most awful habit",
+"What’s the weirdest thing that has happened to you on a date",
+"Have you ever been suspended from school",
+"Have you ever lied to your mom about not having a girlfriend",
+"Have you ever stolen money from your dad’s wallet for a date",
+"What has been your wildest fantasy",
+"If you were invisible for day, who would you spy on",
+"Have you ever flirted with your teacher",
+"Have you ever done drugs and felt the world was about to explode",
+"Have you ever apologized publically for your any wrong doings",
+"Would you marry the girl of your mom’s choice",
+"If given the chance, would you take your life to extend the life of your loved ones",
+"What’s that one thing you hope your parents never get to know about",
+"What’s the last lie you told",
+"What was the most embarrassing thing you’ve ever done on a date",
+"Have you ever accidentally hit something (or someone!) with your car",
+"Name someone you’ve pretended to like but actually couldn’t stand",
+"What’s your most bizarre nickname",
+"What’s been your most physically painful experience",
+"What bridges are you glad that you burned",
+"What’s the craziest thing you’ve done on public transportation",
+"If you met a genie, what would your three wishes be",
+"If you could write anyone on Earth in for President of the United States, who would it be and why",
+"What’s the meanest thing you’ve ever said to someone else",
+"Who was your worst kiss ever",
+"What’s one thing you’d do if you knew there no consequences",
+"What’s the craziest thing you’ve done in front of a mirror",
+"What’s the meanest thing you’ve ever said about someone else",
+"What’s something you love to do with your friends that you’d never do in front of your partner",
+"Who are you most jealous of",
+"What do your favorite pajamas look like",
+"Have you ever faked sick to get out of a party",
+"Who’s the oldest person you’ve dated",
+"How many selfies do you take a day",
+"Meatloaf says he’d do anything for love, but he won’t do “that.” What’s your “that”",
+"How many times a week do you wear the same pants",
+"Would you date your high school crush today",
+"Where are you ticklish"
+];
+
+console.log(truthArr);
+
+    var dareArr = [
+"Let the group choose an item for you to brush your teeth with",
+"Write your name on the floor with your tongue",
+"Open Facebook or Twitter or Instagram, go to the account of the first person you see, and like every post on their wall going back to a year",
+"Eat a whole piece of paper",
+"Open the front door and howl like a wolf for 30 seconds",
+"Let me put a duct tape on any part of your body I choose and rip it off",
+"I dare you to tie your hands to your ankles for the rest of the game",
+"Eat a spoonful of salt",
+"Spend 10 seconds in a dustbin",
+"Lift up the couch cushions, and if there is anything under it, you need to put it in your mouth for 10 seconds",
+"Spin around 10 times and try to walk straight",
+"Eat a raw egg",
+"Write a letter to your doctor describing an embarrassing rash you have, and post it on Facebook or Twitter or Instagram",
+"Cover your hair with powder and leave it on until the end of the game",
+"Let the group choose 3 random things from the refrigerator and mix it together. Then you have to eat it",
+"Stand up and do jumping jacks until your next turn",
+"Dig through the trash and name everything you find",
+"Sniff another player’s armpit for 10 seconds",
+"Give your phone to another player to send a text message to their contact of choice",
+"Let the other players go through your phone for a minute",
+"Allow someone to pour ice down your shirt and pants",
+"Let another player throw flour in your face",
+"Sing a song chosen by the group while eating spoonfuls of butter or mayonnaise",
+"Close your eyes and let your friends put whatever food from the fridge they want in your mouth",
+"One by one, make up a title for each players’ movie about their life",
+"Let your friends pose you and stay like that until the next round",
+"Let each player choose one word, then attempt to form a sentence with it and post it to Facebook or Twitter or Instagram",
+"Empty your purse, backpack, or wallet and let everyone see what you have",
+"Allow the person to your right to tickle you",
+"Whoever’s name begins with an A in the group must call your parents and tell them what a bad friend you are to them",
+ "Do your best impression of someone in the room and keep going until someone correctly guesses who it is",
+"Eat a raw onion and do your best not to cry",
+"Be blindfolded and let someone feed you something",
+"Lick mayonnaise or butter off of someone’s toe",
+"Someone has to dip their finger in the trash can and you have to lick it",
+"Trade socks or shoes with the person to your right",
+"Let a person in the group put a leash on you and walk you around the room while you bark like a dog",
+"Hand your phone to the person across from you and let them post whatever they want to your social media accounts",
+"Smell someone else’s shoes",
+"Take the socks off the person’s feet across from you and wear them like gloves until your next turn",
+"Serenade the person next to you",
+"Take a selfie with the person next to you, and post it on social media along with a deep and emotional paragraph about what they mean to you",
+"Let the person across from you give you a wedgie",
+"Dance aggressively until you run out of breath",
+"Suck on a single spaghetti with the person to your left",
+"Get a bar of soap from the bathroom and sell it to the group for 3 minutes",
+"With your eyes closed, pick someone from your contact list and send them a text",
+"Stand up and do your best impersonation of the person on your right",
+"Go in the kitchen and rearrange everything in the food pantry in alphabetical order",
+"Imagine the person to your left is your pet, talk to them as though you just got home",
+"Act like a dog until your next turn",
+"Describe what the sky looks like without using the words blue or white",
+"Sing the chorus of your favorite song",
+"Walk across the floor like a crab and embrace the person opposite you",
+"Make up a song about the host of the game",
+"Exchange shirts with the person to your left and wear it for the remainder of the game",
+"Knock on the neighbor’s door and explain to them that your pet lizard got loose and ask if you can look for it in their house",
+"For the next 15 minutes, everything you say must be spoken in baby talk",
+"Allow the person to your left to cut your hair however they see fit",
+"Make a sandwich while blindfolded",
+"Juggle an egg",
+"Eat a spoonful of dry pepper",
+"From now until your next turn, every time someone talks, interrupt by saying, “that’s a lie.”",
+"Get down on one knee and propose to the person on your left",
+"Take the socks off the person’s feet across from you and wear them like gloves until your next turn",
+"Open Facebook and “like” the first thing that pops up even if you disagree with it",
+"Stand up and do your best impersonation of your mom",
+"Rearrange all the pictures in the room according to their size",
+"Take off your shoe and clean your foot as though you are an animal",
+"Stick your hand in the toilet",
+"Put makeup on the person sitting opposite you",
+"Do your best impersonation of someone else in the room and keep going until someone else guesses who you are",
+"Call a house agent from the internet and show genuine interest in a random house for several minutes",
+"For the next 10 minutes, when someone speaks, put your ear up close to them and act as though you can’t hear what they are saying",
+"For the rest of the game, you must cluck like a chicken at the beginning and end of everything you say",
+"Be silent and say nothing from now until your next turn",
+"While blindfolded, you must eat something that the person to your left chooses to feed you",
+"Tie your shoe strings together and walk around the room 5 times",
+"Stand at the doorway and yell at the top of your lungs, “I was adopted! Nooooooo.”",
+"Text a friend and tell them their shirt is on backward",
+"Wear your clothes backward for the duration of the game",
+"Tell someone something negative you have said about them in private",
+"Go outside to the trash bin and throw a tantrum because someone put trash in it",
+"Call someone and weepingly confess your new-found love for Justin Bieber",
+"Kiss the person to your right on the cheek",
+"Text your close friend and tell them they smell bad",
+"Rub your armpits and then smell your fingers",
+"Sit on your hands until your next turn",
+"Knock on the neighbor’s door and ask if you can park your helicopter in their driveway",
+"Text your mom and tell her that you are expecting a baby",
+"Walk outside frantically carrying an empty leash and approach people asking them if they have seen your pet alligator because it just escaped",
+"Make a sandwich containing every condiment in your refrigerator",
+"Close your eyes and let everyone draw on you for 5 minutes",
+"Tell a bizarre 2-minute story about the night you slept in the woods",
+"Stand up and belly dance until your next turn",
+"Name the person in the room who you think is the best dressed",
+"Name the person in the room who you think is the worst dressed",
+"Text your siblings and tell them that you just found out you are adopted",
+"Make the sound of a dripping faucet until your next turn",
+"From now until the end of the game, every time you talk, speak like a robot",
+"Act like a cheerleader and do a cheer about the host of the party",
+"For the rest of the game, you must only communicate using animal sounds",
+"Make confetti out of a whole tissue roll then clean up after",
+"Describe to the group what your last bathroom experience was like",
+"Make a sound like an elephant",
+"Make a hat out of plastic bag then put the hat on and post a selfie to social media. Leave the hat on for the duration of the game",
+"Hang your socks from your ears until the end of the game",
+"Fill your mouth with water and act like a fountain",
+"For the rest of the game you must say your name at the beginning and the end of every sentence you speak",
+"Repeat everything the person to your left says until your next turn",
+"Choose one inanimate object that is in the room. Now spend the next 2-minutes telling the group what that object is thinking",
+"Attempt to lick your elbow for at least 3 minutes",
+"Make eye contact with a player and don’t break it until it’s your turn again",
+"Get a mouthful of water and gargle it until your next turn",
+"Do the chicken dance to no music until your next turn",
+"Crack an egg on your head",
+"Stick out your tongue and talk that way until your next turn",
+"Bust your best dance move right now",
+"Turn your pants inside out and wear them",
+"Do everything with “crab hands” for the rest of the game",
+"Reenact what you think it is like to give birth",
+"For the rest of the game, speak like you are the President of America",
+"Act like a drunk for 3 minutes",
+"Make up a rap song and perform it for the room",
+"Speak in the voice of your favorite cartoon character for 3 minutes",
+"Use ketchup to put the mark of Simba on your forehead",
+"Show the most embarrassing photo on your phone",
+"Show the last five people you texted and what the messages said",
+"Let the rest of the group DM someone from your Instagram account",
+"Eat a raw piece of garlic",
+"Do 100 squats",
+"Keep 5 ice cubes in your mouth until they melt",
+"Give a foot massage to the person on your right",
+"Put 10 different available liquids into a cup and drink it",
+"Yell out the first word that comes to your mind",
+"Like the first 15 posts on your Facebook newsfeed",
+"Eat a spoonful of mustard",
+"Keep your eyes closed until it's your go again",
+"Pretend to be the person to your right for 1 minute",
+"Eat a snack without using your hands",
+"Say two honest things about everyone else in the group",
+"Try and make the group laugh as quickly as possible",
+"Try to put your whole fist in your mouth",
+"Tell everyone an embarrassing story about yourself",
+"Post the ugliest selfie on your phone on Instagram Stories",
+"Tell the saddest story you know",
+"Howl like a wolf for two minutes",
+"Let someone else tickle you and try not to laugh",
+"Put as many snacks as you can into your mouth at once",
+"Lick peanut butter or some other kind of spread off someone’s cheek",
+"Call an ex and leave a message for them telling them you miss them and want to have them back",
+"Make out with your hand",
+"Apply for a really weird job online",
+"Make a social media post saying you’re considering leaving your job/school to become a professional clown",
+"Give someone in the room a foot massage",
+"Call your girlfriend/boyfriend’s parents and tell them how much you love their child",
+"Eat a spoonful of ketchup",
+"Find something stinky in your trash and leave it on your head for a full minute",
+"Leave your nose under another player’s armpit for thirty seconds",
+"Let another player pour ice down your back, chest or butt",
+"Lick someone’s toe",
+"Let the person next to you do ten push-ups with you lying under them",
+"Find a picture of a random person online and say how much they mean to you in a social media post",
+"Hold hands with one of the other players for the rest of the game",
+"Ask the person you’ve been crushing on out on a date for this weekend",
+"Call one of your friends’ relatives on the phone and sing Frozen’s ‘Let It Go’ at the top of your lungs",
+"Pretend to be on dog peeing on a tire",
+"Got to your neighbor’s house and explain to them that you’re looking for your pet bat who just happens to be invisible",
+"For the next 15 minutes, talk with a deep English accent",
+"Make a ring with some foil paper and propose to whoever’s sitting on your right",
+"Allow someone in the room to give you a quick, mini makeover",
+"Pretend to be a chicken who’s having trouble laying an egg",
+"Call one of your relatives and convince them that you really saw a UFO",
+"Call your parents and tell them you’re expecting a baby",
+"Let one of the other players draw you new eyebrows with a permanent marker",
+"Text one of your friends and tell them you didn’t appreciate them farting in your presence the last time you two hung out",
+"For the rest of the game, pretend to speak like the current president of the United States",
+"Put the mark of Simba on another player’s head using ketchup",
+"Open any random book and read the entire page as if you were acting out a Shakespearean play",
+"Find a wig and sing one verse and chorus of a Whitney Houston song",
+"Chew a stick of gum without removing the wrapper",
+"Take off your socks using your teeth",
+"Lick a bar of soap someone just used",
+"Roast every player that’s in the game",
+"Call a restaurant and ask really stupid questions about one of their menu options",
+"Do your best Michael Jackson impersonation",
+"Give someone in the group a piggyback ride around the room",
+"Tape two paper or plastic cups to the front of your shirt",
+"Recite the multiplication table of 2",
+"Share a shirt with the person to your right for the next 3 rounds",
+"Imitate a Chinese accent for 2 turns",
+"Don’t say ‘yes’ or ‘no’ for 1 minute",
+"Try to sell ice in the street",
+"Send an email to one of your teachers, telling them about how your day is going",
+"Paint your fingernails with a crayon",
+"Eat a spoon of salt",
+"Post an embarrassing picture of yourself online",
+"Snort a line of sugar",
+"Get blindfolded and spin around 10 times and walk down the street and back",
+"Get some powder in your hands and smack the person to your left on the cheek",
+"Wrap your head in your t-shirt and sit like that for one round",
+"Read the last message you received out loud",
+"Do 50 jumping jacks",
+"Write a Facebook (or other social media) post only using your toes",
+"Mime your dream job",
+"Call a random person and sing happy birthday to them",
+"Stand like a flamingo for the next four rounds",
+"Make a headdress out of toilet paper and pose for photos",
+"Slap the person to your left on the booty",
+"Kiss your right neighbour on a cheek",
+"Do an impression of your favorite celebrity",
+"Make up a story about the item to your right",
+"Prank call someone you know",
+"Massage the 3rd person to your left",
+"Lick the 2nd person to your right’s ears for 30 secs",
+"Put a blindfold on and let the person to your right do whatever they want to you with their tongue",
+"Lick the nose of the person on your right",
+"Sit upside down in a chair until your next turn",
+"Say the alphabet backwards in 15 seconds",
+"Belly dance to a country song",
+"Lick your nose",
+"Go a whole minute without blinking",
+"Do 5 cartwheels in a row",
+"Get a makeover by a blindfolded person",
+"Paint your toenails only using your teeth",
+"Make up a poem about the colour blue",
+"Make up a country song of the top of your head",
+"Meow like cat",
+"Get tickled by the player to your left for 30 seconds",
+"Act like your favourite Disney princess",
+"Do 20 sit ups",
+"Take a selfie with the toilet and post it online",
+"Give a 3-minute stand-up comedy routine",
+"Arm wrestle the player opposite you",
+"Break dance for 30 seconds",
+"Act like an old lady or an old man until your next round",
+"Make a fish face",
+"Write a Facebook (or other social media) post only using your toes",
+"Make up a rap about the person to your left",
+"Try doing the splits and go so far as you can",
+"Act like a statue until it is your turn again",
+"Put on a blindfold and try to guess who another player is just by touching them",
+"Sing the alphabet without moving your mouth",
+"Act like a monkey until it is your turn again",
+"Fake cry for 2 minutes",
+"Act like your favourite superhero",
+"Explain to the person you like least in this room, why you like them least",
+"Talk in a fake accent for the rest of the game"
+
+
+
+];
+
+console.log(dareArr);
+
+    $('#truthButton').click(function(evt){
+
+    // define the containers we are targeting
+    var truth = $('#display').text();
+    
+    
+    //prevent browsers default action
+    evt.preventDefault();
+
+    //length of truth array;
+    var truthArrLength = truthArr.length;
+    
+    //random number for truth
+    var randomNumberTruth= Math.floor(Math.random()*truthArrLength);
+    
+    //Get a new truth
+	for(i=0;i<=truthArrLength;i++){
+        var newTruth = truthArr[randomNumberTruth];
+
+        //console.log(newTruth);
+      var timeAnimation = 300;
+      var paraContainer = $('#paraContainer');
+      //fade out animation with callback
+      paraContainer.fadeOut(timeAnimation, function(){
+        paraContainer.html('');
+				paraContainer.append('<p>'+newTruth+'</p>'+'<p id="display"></p>');
+        //fadein animation.
+        paraContainer.fadeIn(timeAnimation);
+      });  
+
+        break;
+    };
+
+   
+});
+
+$('#dareButton').click(function(evt){
+
+    // define the containers we are targeting
+    var dare = $('#display').text();
+
+    //prevent browsers default action
+    evt.preventDefault();
+
+    //length of dare array;
+    var dareArrLength = dareArr.length;
+
+    //random number for dare 
+    var randomNumberDare= Math.floor(Math.random()*dareArrLength);
+
+    //Get new dare
+     for(k=0;k<=dareArrLength;k++){
+        var newDare = dareArr[randomNumberDare];
+
+          //console.log(newDare);
+      var timeAnimation = 300;
+      var paraContainer = $('#paraContainer');
+      //fade out animation with callback
+      paraContainer.fadeOut(timeAnimation, function(){
+        paraContainer.html('');
+				paraContainer.append('<p>'+newDare+'</p>'+'<p id="display"></p>');
+        //fadein animation.
+        paraContainer.fadeIn(timeAnimation);
+      });  
+
+        break;
+    };
+});
+
+
+});
+
+    </script>
+
+</body>
+
+</html>
