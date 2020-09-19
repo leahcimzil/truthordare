@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Extreme Truth or Dare </title> 
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Roboto&family=Source+Code+Pro:wght@500&display=swap" rel="stylesheet">
+
+<style>
+      * {
+  box-sizing: border-box;
+}
+
+body{
+  background-color: #1D1828;
+  display: block; 
+  position: relative; 
+  max-width: 100vw; 
+  min-height: 100vh; 
+  overflow: hidden; 
+  margin: 0; 
+  padding-top: 10px;
+  padding-bottom: 10px; 
+}
+
+.header{
+  font-family:'Source Code Pro';
+  text-align: center;
+  font-size: 36px;
+  line-height: 1em;
+  color: #ffffff;
+  padding-bottom:0px;
+}
+
+p{
+  font-family: 'Source Code Pro';
+  padding-left: 20%;
+  padding-right: 20%;
+  padding-bottom: 10px;
+  text-align: center;
+  color:white;
+  margin-top:-20px;
+  margin-bottom: 8vh;
+  font-size: 16px;
+}
+
+#paraContainer{
+    display: block;
+    width: 50vw;
+    height:40vh;
+    background-color: #ffffff;
+    margin: 0 auto;
+    margin-bottom: 5vh;
+    border-radius: 8px;
+    padding-top:10vh;
+    text-align: center;
+}
+
+#paraContainer p{
+font-family: 'Source Code Pro';
+  padding-left: 20%;
+  padding-right: 20%;
+  padding-bottom: 10px;
+  text-align: center;
+  color: #000000;;
+  margin-top:-20px;
+  margin-bottom: 8vh;
+  font-size: 18px;
+  vertical-align: middle;
+}
+
+.button{
+    display:flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    width:50vw;
+    text-align: center;
+    margin-bottom: 8vh;
+}
+
+.buttonDiv{
+    display: inline-block;
+    margin:0 auto;
+    text-align: center;
+}
+
+#truthButton{
+  background-color: #FFA552 ;
+  color:white;
+  width:200px;
+  height:50px;
+  border:none;
+  border-radius: 8px;
+  font-size: 20px;
+  font-weight: 600;
+  font-family: 'Source Code Pro';
+  text-decoration: none;
+  border:none;
+}
+
+
+#dareButton{
+  background-color: #832161;
+  color:white;
+  width:200px;
+  height:50px;
+  border:none;
+  border-radius: 8px;
+  font-size: 20px;
+  font-weight: 600;
+  font-family: 'Source Code Pro';
+  text-decoration: none;
+  border:none;
+}
+
+.floatLeft{
+    float:left;
+
+}
+
+.floatRight{
+    float:right;
+    
+}
+
+ #suggestSupport{
+  padding-left: 16px;
+  padding-right: 16px;
+  font-size: 14px;
+  font-family: 'Source Code Pro';
+}
+
+a{
+    color:white;
+}
+
+a:active{
+    text-decoration: none;
+    color:white;
+}
+
+a:hover{
+    text-decoration: none;
+    color:white;
+}
+
+.linkTo{
+    margin:0 auto;
+    text-align: center;
+    display: block;
+    margin-bottom: 5vh;
+    font-size: 14px;
+    font-family: 'Source Code Pro';
+    color:white;
+}
+
+@media only screen and (max-width: 768px) {
+    .header{
+        font-size: 28px;
+    }
+    p{
+       font-size: 14px;
+       padding-left: 10%;
+       padding-right: 10%;
+       margin-bottom: 5vh;
+       margin-top:-16px;
+   }
+
+#paraContainer{
+       width:80vw;
+   }
+
+#paraContainer p{
+    font-size: 16px;
+       padding-left: 10%;
+       padding-right: 10%;
+       margin-bottom: 5vh;
+       margin-top:-16px;
+   }
+
+.button{
+text-align: center;
+display:flex;
+justify-content:space-evenly;
+}
+
+
+
+#truthButton{
+  width:150px;
+  height:50px;
+  border:none;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 600;
+  border:none;
+  margin-right: 50px;
+}
+
+#dareButton{
+    width:150px;
+  height:50px;
+  border:none;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 600;
+  border:none;
+}
+
+}
+
+
+
+ </style>
+
+</head>
+    
+    
+<body >
+
+  <h2 class="header">EXTREME TRUTH OR DARE </h2>
+  <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. 
+</p>
+
+<div class="section">
+
+<div id="paraContainer">
+
+    <p id="display">
+    </p>
+    
+</div>
+
+<div class= "button">
+   <div class="buttonDiv"> <button id="truthButton" type="button">TRUTH</button> </div>
+    <div class="buttonDiv" > <button id="dareButton" type="button">DARE</button> </div>
+</div>
+
+
+<a href="cleanIndex.html" class="linkTo">Go to Clean Truth or Dare</a>
+
+<a id="suggestSupport" href="#" class="floatLeft">Suggest</a>
+<a id="suggestSupport" href = "#" class="floatRight">Support</a>
+
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
+<script>
+
+    //confetti javascript
+     class Progress {
+      constructor(param = {}) {
+        this.timestamp        = null;
+        this.duration         = param.duration || Progress.CONST.DURATION;
+        this.progress         = 0;
+        this.delta            = 0;
+        this.progress         = 0;
+        this.isLoop           = !!param.isLoop;
+    
+        this.reset();
+      }
+    
+      static get CONST() {
+        return {
+          DURATION : 1000
+        };
+      }
+    
+      reset() {
+        this.timestamp = null;
+      }
+    
+      start(now) {
+        this.timestamp = now;
+      }
+    
+      tick(now) {
+        if (this.timestamp) {
+          this.delta    = now - this.timestamp;
+          this.progress = Math.min(this.delta / this.duration, 1);
+    
+          if (this.progress >= 1 && this.isLoop) {
+            this.start(now);
+          }
+    
+          return this.progress;
+        } else {
+          return 0;
+        }
+      }
+    }
+    
+    class Confetti {
+      constructor(param) {
+        this.parent         = param.elm || document.body;
+        this.canvas         = document.createElement("canvas");
+        this.ctx            = this.canvas.getContext("2d");
+        this.width          = param.width  || this.parent.offsetWidth;
+        this.height         = param.height || this.parent.offsetHeight;
+        this.length         = param.length || Confetti.CONST.PAPER_LENGTH;
+        this.yRange         = param.yRange || this.height * 2;
+        this.progress       = new Progress({
+          duration : param.duration,
+          isLoop   : true
+        });
+        this.rotationRange  = typeof param.rotationLength === "number" ? param.rotationRange
+                                                                       : 10;
+        this.speedRange     = typeof param.speedRange     === "number" ? param.speedRange
+                                                                       : 10;
+        this.sprites        = [];
+    
+        this.canvas.style.cssText = [
+          "display: block",
+          "position: absolute",
+          "top: 0",
+          "left: 0",
+          "pointer-events: none"
+        ].join(";");
+    
+        this.render = this.render.bind(this);
+    
+        this.build();
+    
+        this.parent.appendChild(this.canvas);
+        this.progress.start(performance.now());
+    
+        requestAnimationFrame(this.render);
+      }
+    
+      static get CONST() {
+        return {
+            SPRITE_WIDTH  : 9,
+            SPRITE_HEIGHT : 16,
+            PAPER_LENGTH  : 100,
+            DURATION      : 8000,
+            ROTATION_RATE : 50,
+            COLORS        : [
+              "#EF5350",
+              "#EC407A",
+              "#AB47BC",
+              "#7E57C2",
+              "#5C6BC0",
+              "#42A5F5",
+              "#29B6F6",
+              "#26C6DA",
+              "#26A69A",
+              "#66BB6A",
+              "#9CCC65",
+              "#D4E157",
+              "#FFEE58",
+              "#FFCA28",
+              "#FFA726",
+              "#FF7043",
+              "#8D6E63",
+              "#BDBDBD",
+              "#78909C"
+            ]
+        };
+      }
+    
+      build() {
+        for (let i = 0; i < this.length; ++i) {
+          let canvas = document.createElement("canvas"),
+              ctx    = canvas.getContext("2d");
+    
+          canvas.width  = Confetti.CONST.SPRITE_WIDTH;
+          canvas.height = Confetti.CONST.SPRITE_HEIGHT;
+    
+          canvas.position = {
+            initX : Math.random() * this.width,
+            initY : -canvas.height - Math.random() * this.yRange
+          };
+    
+          canvas.rotation = (this.rotationRange / 2) - Math.random() * this.rotationRange;
+          canvas.speed    = (this.speedRange / 2) + Math.random() * (this.speedRange / 2);
+    
+          ctx.save();
+            ctx.fillStyle = Confetti.CONST.COLORS[(Math.random() * Confetti.CONST.COLORS.length) | 0];
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+          ctx.restore();
+    
+          this.sprites.push(canvas);
+        }
+      }
+    
+      render(now) {
+        let progress = this.progress.tick(now);
+    
+        this.canvas.width  = this.width;
+        this.canvas.height = this.height;
+    
+        for (let i = 0; i < this.length; ++i) {
+          this.ctx.save();
+            this.ctx.translate(
+              this.sprites[i].position.initX + this.sprites[i].rotation * Confetti.CONST.ROTATION_RATE * progress,
+              this.sprites[i].position.initY + progress * (this.height + this.yRange)
+            );
+            this.ctx.rotate(this.sprites[i].rotation);
+            this.ctx.drawImage(
+              this.sprites[i],
+              -Confetti.CONST.SPRITE_WIDTH * Math.abs(Math.sin(progress * Math.PI * 2 * this.sprites[i].speed)) / 2,
+              -Confetti.CONST.SPRITE_HEIGHT / 2,
+              Confetti.CONST.SPRITE_WIDTH * Math.abs(Math.sin(progress * Math.PI * 2 * this.sprites[i].speed)),
+              Confetti.CONST.SPRITE_HEIGHT
+            );
+          this.ctx.restore();
+        }
+    
+        requestAnimationFrame(this.render);
+      }
+    }
+    
+    (() => {
+      const DURATION = 8000,
+            LENGTH   = 120;
+    
+      new Confetti({
+        width    : window.innerWidth,
+        height   : window.innerHeight,
+        length   : LENGTH,
+        duration : DURATION
+      });
+    
+      setTimeout(() => {
+        new Confetti({
+          width    : window.innerWidth,
+          height   : window.innerHeight,
+          length   : LENGTH,
+          duration : DURATION
+        });
+      }, DURATION / 2);
+    })();
+   
+</script>
+
+
+<script>
+//truthordare function
+    $(document).ready(function(){
+
+    var truthArr=
+[
+"Have you ever walked in on your parents doing it",
+"Would you rather have sex with [insert name] in secret or not have sex with that person but everyone thinks you did",
+"What color and kind of underwear are you wearing right now",
+"Do you have any fetishes, what are they",
+"What's the worst sexual experience you've ever had",
+"Who would you like to kiss in this room",
+"Where's the weirdest place you've had sex",
+"What’s the most unusual place you made love",
+"What sex act have you’ve done that you’ll never do again",
+"What do you like during foreplay",
+"What’s the best orgasm you’ve ever had",
+"When was the last time you masturbated",
+"What is your favorite position",
+"How do you feel when touching yourself",
+"What is the first dirty thing you would do if you woke up as the opposite sex",
+"What is your craziest one-night stand story",
+"Do you prefer to have a dominant, submissive, or neutral partner Explain why",
+"Do you like to listen to music while having sex",
+"Have you ever watched another couple have sex",
+"What is the wildest fantasy you ever had that actually came true",
+"How was your first sex experience",
+"What is the longest you’ve gone without having sex",
+"Have you ever experimented with someone of the same sex",
+"What are the sexiest things someone has said to you",
+"Have you ever had a one-night stand",
+"What is your secret fantasy ",
+"What is the kinkiest thing you’ve done during sex",
+"Have you ever witnessed people having sex",
+"Do you leave the lights on or off during sex",
+"What is your favorite place to have sex",
+"Does naughty talk get you aroused",
+"Have you ever faked an orgasm",
+"Would you rather give or receive pleasure",
+"Have you ever fantasized about a teacher",
+"What is the quickest someone has gotten you into bed(or you have gotten someone into bed), and how",
+"What is your favorite position during sex Explain why",
+"What’s a sexual act you’ll never do",
+"What’s the dirtiest thing you have been caught doing as a teen",
+"How many sexual partners have you had in your life",
+"What was your most embarrassing situation while in bed",
+"Do you like sex to be rough or sensual",
+"Who gave you your first orgasm",
+"Have you ever been friend-zoned If so, by whom",
+"What makes you orgasm during sex",
+"Have you ever had an orgy",
+"When was the first time that you had an orgasm",
+"Have you ever taken someone’s virginity",
+"Have you ever had a threesome",
+"Have you ever been tied up If no, would you like to try it",
+"What excites you the most",
+"What is the most embarrassing thing you have ever done sexually",
+"What is your favorite type of porn",
+"Have you ever masturbated in a public restroom",
+"What is your favorite place to be kissed on your body",
+"What’s your favorite thing about a quickie",
+"What’s your craziest sexual fantasy",
+"What are your dirtiest secrets",
+"Have you ever tried anal sex",
+"Have you ever used a sex toy",
+"Have you ever done sexy things with food",
+"What is your favorite body part for to be sucked on",
+"Do you like being nibbled on or lightly bitten Where",
+"What's your favorite sex toy to use",
+"What’s the hottest sex dream you’ve ever had",
+"Tell me one thing I could do that would make you immediately orgasm",
+"Which is your favorite kind of sex: soft, slow, and sweet or aggressive, fast, and feisty",
+"If I gave you a free pass to hook up with one celebrity, who would it be and why",
+"What item of clothing do you think you look sexiest in",
+"Describe your bedroom personality in three words",
+"If I were handcuffed to the bed, what would you do to me",
+"If you were to create an original sex move, what would you call it",
+"What's something dirty you've always been too shy to say in bed",
+"If we could only have sex in one position for a month, what position would you pick",
+"Is there something you've seen in a porn movie that you'd like to try",
+"What kind of foreplay would you like to try the next time you are in bed",
+"Where do you think your most romantic kiss took place. Describe everything you remember about it",
+"What’s your favorite body part to watch when your partner is on top of you",
+"How often do you masturbate",
+"If you could go back and change anything about the first time you had sex, what would it be and why",
+"What is your least favorite sex position and why",
+"How do you feel about threesomes Have you ever had one, and if not, would you ever have one",
+"What do you think the sexiest part of your body is",
+"Have you ever fantasized about anything sexual with someone of your same sex",
+"What’s the wildest place you’ve ever had sex",
+"What do you think of when you first see a lady/man naked",
+"Do you have a crush on any of your friend’s boyfriends/girlfriend",
+"On a scale of 1 to 10, how good looking would you rate yourself",
+"Tell everyone in the group your most embarrassing story",
+"Have you ever thought about marrying someone, who",
+"Rate everyone in the room looks, on scale of 1-10",
+"Have you ever been friend-zoned",
+"When you are trying to impress people what personality trait do you hide",
+"Why did you break up with your first girlfriend/boyfriend",
+"Would you rather kiss the person to the left or right of you",
+"If you are given the freedom to do anything in bed, what will you do",
+"What is one dare you would never do",
+"Have you ever cross-dressed or worn undergarments of the opposite sex",
+"Is you knew the world was about to end, what would you do",
+"Have you watched porn at work",
+"If you had another player to be your slave for the next fifteen minutes, who would it be and what would you have them do",
+"If you could change something about your body, what would you change",
+"Have you ever watched porn",
+"Have you tried domination or submission",
+"Has someone of the same sex ever made a pass at you, or vice-versa",
+"What is your girl/boyfriend’s favourite thing",
+"Tell the group what turns you on",
+"Who in this room would you have anal with",
+"What, according to you, is the worst thing about a guy / girl",
+"Have you ever cheated on a boyfriend/girlfriend",
+"What is your idea of romance",
+"What celebrity do you have crush on",
+"Who is the best dressed person in this room",
+"Have you ever had a one night stand",
+"If your friends could change one thing about you what do you think it would be",
+"What was the last lie you told",
+"Pick one person in the room to exchange your girlfriend/boyfriend with!",
+"Who’s the ugliest person in the room",
+"What was your girl/boyfriend’s childhood nickname",
+"Have you ever gone a whole day without wearing underwear",
+"What is your favorite lovemaking accessory",
+"What’s your idea of a perfect date",
+"Would you rather kiss a boy or a girl",
+"How many relationships have you ever been involved in",
+"Where is your favorite place to be kissed",
+"When did you start drinking alcohol",
+"What is the grossest thing you’ve ever done during sex",
+"What talent do you have that is embarrassing to share",
+"Have you ever made a pass at someone of the same sex",
+"Do you have crush on anyone in this room",
+"What do you really hope your parents never find out about",
+"Who is the ugliest guy you’ve ever dated",
+"If you had only 24 hours left to live, what would you do",
+"When was the last time you googled your own name",
+"Who was your first crush",
+"Have you ever stolen anything",
+"If you were given one wish that would be granted what would it be",
+"When did you have your first kiss",
+"Have you ever swap underwear with someone of the opposite sex",
+"What is the most embarrassing thing you have done in the bedroom",
+"What attracts you most in a person of the opposite gender",
+"What phobias do you have",
+"Do you believe in love at all",
+"Who was your first love",
+"Have you ever physically or sexually abused your girlfriend or boyfriend",
+"Have you ever fallen in love with someone who didn’t return your feelings",
+"When have you broken your mother’s heart",
+"If you weren’t here what would you be doing",
+"Describe any memorable guilty pleasure act",
+"What is your weirdest habit",
+"What are you afraid of",
+"Have you ever climaxed when still fully clothed",
+"Assuming every man/woman has their price, what is yours",
+"What one person do you text the most",
+"Would you ever consider being a nudist",
+"What is the best thing you have gotten away with",
+"Who in the room do you think would be a bad date",
+"Would you still love your significant other if he or she gained 100 pounds",
+"If you were left on this earth with only one other person in this room who would you chose",
+"Who do you think is the most attractive person on earth",
+"Describe your worst date ever",
+"How was your first kiss",
+"If you were to receive a sex toy as a gift, what would you prefer",
+"What would you do if you were the opposite sex for a day",
+"What would someone have to do, to get kiss from you",
+"What is your favorite place to have sex",
+"If you had to live with only one object what would it be",
+"What is your biggest fear in a relationship",
+"When did you have your first heartbreak",
+"Is kissing someone considered cheating",
+"Why did you break up with your last boyfriend/girlfriend",
+"Have you ever back stabbed a friend",
+"Have you ever broken up with someone by text",
+"If you could do whatever you wanted to me what would it be",
+"Have you ever made out with same sex person",
+"Have you ever slept with someone on a first date",
+"What’s your ex-girlfriend/boyfriend name",
+"Would you rather kiss the person to the left or right of you",
+"When was the first time you got drunk",
+"Do you watch porn",
+"What was your worst kiss",
+"Have you ever worn the opposite sex’s clothing",
+"If your gf/bf was a food what would he/she will be and how would you eat her/him",
+"What is your best physical attribute",
+"What do you wear to bed",
+"Have you ever cheated in exam",
+"Who is the one person in the world you hate the most",
+"If you had to marry someone in this room who would it be",
+"What is your favorite sex position",
+"What was your longest relationship",
+"Are you carrying condoms",
+"When did you lose your virginity",
+"How many people have slept with",
+"Do you Google new people you meet",
+"What is your favorite body part of the person to your right ",
+"If you were the opposite sex for one day, what would you look like and what would you do",
+"When was the first time you fell in love",
+"What is your wildest sexual fantasy Describe in detail",
+"What first attracts you to someone their appearance or personality",
+"What is your least favorite thing about the person on your right",
+"If you could trade bodies with anyone in this room, who would it be",
+"When was the last time you want on a date",
+"Do you think you are perfect marriage material Why",
+"What is the weirdest thing you have ever eaten",
+"What is your dream job",
+"At what age did you have sex for the first time",
+"What was the most painful break up you ever had",
+"What is your biggest turn on in a partner",
+"Who here has the nicest butt",
+"Who is the sexiest person here",
+"Who is the best looking person in the room",
+"Are you afraid of the dark",
+"What is one thing you want to do before you die",
+"Would you use a dating website",
+"What’s the worst word you have ever said",
+"How was your first kiss Describe",
+"Have you ever peed in a pool before",
+"What’s your best pick up line",
+"What is your dream job",
+"What is the question that you don’t want to be asked ",
+"If (insert name) was turned into an animal and you had to mate to change them back, which animal would cause the least mental damage",
+"What is your girl/boyfriend’s favourite colour",
+"What is the longest you have gone without taking a bath",
+"What prejudice do you harbor",
+"If you had a gift of $1000 to give to someone in this room, Who would it be and why",
+"Have you ever dumped someone If so, why",
+"When was the last time you were caught in a lie",
+"If you significant other said it was ok would you cheat on them",
+"What is the worst thing about being a grown-up",
+"When where you embarrassed getting caught in the middle of something",
+"What secret are you scared of people finding out about you",
+"What is the worst sin you ever committed",
+"How soon did you want start a family",
+"What color is your underwear",
+"What you see first when you look at any girl",
+"How many kids would you like to have",
+"What’s your most embarrassing nickname",
+"Would you kiss the person next to you",
+"When was the last time you seen someone else naked",
+"What do you do to let someone that you are interested in know that you like him/her",
+"What fear keeps you up at night",
+"Have you ever farted in an elevator",
+"In three words, describe what you are like in bed",
+"What is the one thing about you that nobody here knows",
+"Do you have an ex you wish you had never met",
+"When have you lost your dignity",
+"What music are you embarrassed about listing",
+"What things are you shallow about",
+"Who in this room would you rather not date",
+"What is the longest time you thing you could go without your phone",
+"If you will be given a chance to become invisible for one day, what would do with this ability",
+"Admit to something dumb you did recently",
+"When have you been fired from a job",
+"Which type of kiss you prefer",
+"How would you describe yourself in 3 words",
+"What is something you stole",
+"Have you ever used a flavored condom",
+"Imagine the person opposite you is food, what food will they be and would you eat them",
+"If you had to murder one person in this room, who would it be",
+"What is your least favorite thing about the person on your left",
+"Have you ever had, or given thought, to the idea of a threesome",
+"Did you ever have sex in a public bathroom",
+"Have you ever been unfaithful to a boyfriend/girl friend",
+"What is your biggest turn off in a partner",
+"What talent do you have that is embarrassing to share",
+"Rate the person to  3rd person to your left out of 1-10",
+"Are you jealous of someone because of who they date",
+"Do you have a crush on anyone in this room",
+"Who was the last person you kissed",
+"Which sex toy turns you on the most",
+"What TV show are you embarrassed about watching",
+"What is your guilty pleasure",
+"Did you ever get caught while watching porn",
+"Who here would you like to be stuck somewhere with, such as an elevator",
+"If you could go out on a date with anyone in this room who would it be",
+"Have you ever been completely in love",
+"What is your biggest turn on",
+"Pick one Money, Power and Fame",
+"Who here would you like to propose if you get a chance",
+"Have you ever kissed someone of the same sex",
+"Does size matter to you",
+"Do you shave your pubic hair",
+"If you had to choose brains or beauty, which would you pick",
+"Who is the wearing the worst outfit in this room",
+"Have you ever had sex in the office",
+"If you could sleep with a Hollywood celebrity of your choice for a night, whom would you pick",
+"What is the craziest thing you’ve done naked",
+"Spill the last secret someone told you",
+"While peeing, have you ever peeked or secretly glanced at the person next to you",
+"What is your favourite thing about the opposite sex",
+"Whom would you like to marry from amongst the group in this room and why",
+"Did you ever spend a whole day without wearing your inner wear at all",
+"What were your first impression of the person to your right",
+"If you were told to marry someone you have dated, who would that be",
+"If you were a homosexual, which person in this room would you make a pass at",
+"Have you ever cheated in an exam",
+"What types of insecurities do you have",
+"What are the bedroom nicknames that you use, or have been bestowed upon on you",
+"What is something that you have never told anyone",
+"When have you had to walk away in shame",
+"When changing in the locker room after a swim, have you ever peeked or secretly glanced at the person next to you",
+"When was the first time you smoked",
+"What makes you feel insecure",
+"Would you still like a certain boy or girl if they changed their appearance such as gain weight",
+"If you could kiss anyone one in this room who would it be",
+"What is your most favorite bedroom fantasy",
+"What’s on your bucket list",
+"Did you ever spread a rumor deliberately",
+"If you had to live with only one object what it would be",
+"Have you ever done anything sexually that you regretted, if so what",
+"What is the worst thing about being your gender",
+"In what way are you inadequate",
+"What is the craziest / dumbest pickup line that you have ever used",
+"What is the last lie you told",
+"What is one talent you wished you possessed",
+"What’s the most daring thing you have done in public",
+"What is the kind of boy/girl you like",
+"What action from you past would put you in jail if law enforcement ever found out",
+"What is your dream wedding",
+"How much money did you make last year",
+"Would you prefer a church wedding or a civil wedding",
+"How do you think you are most likely to die",
+"Have you ever cheated on your significant other",
+"What is your biggest regret",
+"What was your funniest first date ever",
+"What is your most embarrassing experience in bed",
+"Who in this room would be the worst to be trapped in an elevator with",
+"What feature of yours are you self-conscious about",
+"What’s the worst thing about being as adult",
+"Which player would you like to swap lives with for a week",
+"When you lie about your income do you lie round up or down By how much",
+"Have you ever bullied someone",
+"Do you sleep naked",
+"When was the last time you showered",
+"When was the last time you kissed someone",
+"Have you ever sexted",
+"If you are paid to have sex, how much you will charge",
+"Who, present in the room, will make a bad date to you",
+"Have you ever flashed someone",
+"What is the stupidest thing you have ever done",
+"When was the most inappropriate time you farted",
+"Describe your dream home",
+"What is the craziest thing you’ve ever did",
+"What sex act have you done that you’ll never do again",
+"What do you like during foreplay ",
+"What is your favorite position",
+"How do you feel when touching yourself",
+"What’s the best orgasm you’ve ever had",
+"What is the wildest fantasy you ever had that actually came true",
+"How was your first sex experience",
+"What is your craziest one-night stand story ",
+"What is the biggest size you've ever had",
+"Would you prefer to date someone older or younger than you",
+"Have you ever strip teased someone",
+"Describe your worst sex ever",
+"Have you ever had sex in your parent's bed",
+"What's the longest you've gone without sex",
+"Have you had sex with someone you met at a dating app? Which",
+"What is the sex move you believe you do better than everyone else",
+"Which is hotter: Sex against the wall or Sex while bent over a table",
+"Would you have sex with someone if it'll get you a better job",
+"What's the longest you have had sex for",
+"Describe your 'I'm getting laid tonight' outfit",
+"Describe the best orgasm you have ever had",
+"Would you rather give head for 5 hours or have someone give you head for 5 hours",
+"Have you ever had sex with a teacher or lecturer. If so where",
+"Have you ever climaxed without touching yourself",
+"How many dates are ideal before the first sex",
+"Spit or Swallow"
+];
+
+    console.log(truthArr);
+
+    var dareArr = 
+[
+"Go to the bathroom, remove all your clothing and rewear them and the 4th person to your left has to be in there with you the whole time",
+"Let someone of the opposite sex spank you as hard as they can on your naked butt",
+"Give the 5th person to your left a handjob while they are still in their cloths",
+"Let the 2nd person to the right of the person opposite you try to get you aroused with their tongue only",
+"Send a naked selfie to anybody in the room",
+"Pick anybody and simulate giving them head with a fruit standing in for their genital",
+"Watch a porn video with anyone in the room and simulate it for the rest of the room",
+"Let the group choose anyone for you, take that person to the bathroom and perform a striptease for them",
+"Lick the nipples of the person sitting to the right of the person opposite you",
+"Order a sex toy online",
+"Put ice cream on your chest and lick it off sensually while looking directly into the eyes of the person",
+"Tongue kiss the person to your left",
+"Let the person opposite you remove your bra or singlet and show it to the room",
+"Say something dirty to the person on your left",
+"Remove four items of clothing",
+"Show off your orgasm face",
+"Seductively eat a banana or any fruit",
+"Do your best sexy crawl",
+"Twerk for a minute",
+"Pole dance with an imaginary pole",
+"Call or text a hooker or strip club and ask for their rates",
+"French Kiss the person to your right",
+"Flirt with a random person of the opposite sex for 1 min",
+"Call a random number and try to flirt with the person who answers",
+"Call your crush and sing them a dirty song",
+"Text your crush or SO and tell them the different ways you’d have sex with them if you guys went on a date",
+"Let the rest of the players pick a contact from your phone and Text them a dirty pick-up line",
+"Go into the bathroom and braid your pubes then come show the group",
+"Dirty talk to the person opposite you",
+"Pick someone of the opposite sex and sit on their lap without wearing a shirt for 30 seconds",
+"Take off your underwear and give them to the nearest person of opposite sex",
+"Remove one item of clothing and show everyone in the room",
+"Compose and read out a dirty sexual story",
+"Lick the toes of the person sitting next to you (you can’t choose an SO)",
+"Pick somebody and give them a massage",
+"Close your eyes, scroll through your cell phone contacts and then tell us the sexiest thing about the person you land on",
+"Objectify the person closest to you",
+"Try to sexually “sell” someone of the opposite sex to the room (Read: Share their good qualities like a used car salesman)",
+"Put on three layers of clothes, including a winter jacket, then dance like a stripper",
+"Use someone else’s toothbrush",
+"Switch underwear with the person to your right",
+"Let someone in the group text your crush with your phone",
+"'Accidentally' post a letter to your feed about an embarrassing STD you got earlier this year",
+"Put your bra and underwear on over top of your clothes then go for a walk in front of the room",
+"Switch bras/boxers with someone of the opposite sex in the room. Make sure to wear it",
+"Act out your dirtiest dream",
+"Try to eat snacks in the most “sexy” way possible for one minute",
+"Go around the room and guess everyone’s kinks",
+"Make a 5 song sexy playlist to play while we finish the game",
+"Use your hands to show the person you are most attracted to in the room what you want them to do with their mouths",
+"Try to arouse someone of the opposite sex using only your tongue and not touching any sexually sensitive areas",
+"Do your best impersonation of a stripper",
+"Go into the other room, take a dirty selfie and send it to someone in the group ",
+"Pick out a porn video and watch with the person opposite you",
+"Close your eyes and lick whatever body part the person to your right puts in front of you",
+"Kiss your three favorite body parts on the 4th person to your left",
+"Whisper in the person opposite you's ear about your most favorite sexual memory with them (real or imaginary)",
+"Simulate a porn with any person in the group",
+"Get freaky with yourself in front of the group",
+"Read your filthiest dirty sext to the room",
+"Let the person opposite you pick a pornstar for you to act like",
+"Remove an article of your clothing that the room decides on",
+"Straddle the 3rd person to your left and give them a sensual lap dance",
+"Let someone in the group rub ice until it melts on any of your most sensitive areas",
+"Choose someone in the group and let them nibble on your neck until for 30 secs",
+"Act out the 2nd person to your right’s sexual fantasy",
+"Download a heart rate monitor app and try to elevate the 5th person to your left’s heart rate with a sultry dance",
+"Let the 3rd person to your right kiss you all over the face, neck, and even ears but don’t make any lip to lip contact",
+"Switch clothing with the person opposite you while hugging, but don’t separate your bodies",
+"Pick somebody at random and tell them something to get them aroused",
+"Send a voice message of you saying dirty talk to your crush, friend or colleague",
+"Take a sexy photo of you and send it to everyone in the room",
+"Pick anyone at random and tell them in details how you would make love to them",
+"Send the person to your left a nude selfie",
+"Read an erotic story to the group for 1 minute",
+"Give blowjob to a banana",
+"Moan as if you were in ecstasy for 15 seconds",
+"Let someone that the room chooses, give you a full body bath in the bathroom making sure not to miss any hard spots",
+"Give the 4th person to the right of the person opposite you a massage. Start at their feet and work your way up until they are satisfied",
+"Spell out a short, sultry message on the body of the farthest person from you…with your tongue",
+ "Pretend the person to your left is a stranger at a bar. Try to pick them up and convince them to come home with you for 2 minutes",
+"Let the 3rd person to the left of the person opposite you go into the other room and dab perfume or cologne somewhere on their body. You have to sniff everywhere until you figure out where they put it on",
+"Put you cell phone on vibrate, then place it on a sensitive part of your body. Now, let each person in the room call you",
+"Step into a bathroom with a random person and show them the color of your underwear top and bottom",
+"Send a nude to your ex",
+"Eat a piece of fruit out of the underwear of the person opposite you ",
+"Take off the shirt of a random person of the opposite sex",
+"Perform a dance to your favorite song in your underwear",
+"Have a staring contest with 4th person to your left. If you blink first you have to remove 3 items of clothing. They don't have to do anything if they blink first",
+"Make out with a picture of Jeffrey Dahmer on your phone",
+"Suck the toes of the nearest person of opposite sex for 2 minutes",
+"Pick a random person of the opposite sex and give them a kiss on their crotch",
+"Blow into the ear of the 3rd person to your right for 20 secs",
+"Sit in only your underwear until the next round",
+"Draw a detailed picture of your genitals for the group",
+"Unclasp the bra of 2nd girl to your left and push their chest into yours",
+"Try 69 position with a random person of the opposite sex",
+"Go blindfolded into the closet, undress, and redress with items only available in that same closet",
+"With clothes on sit on the 4th person to your left and start riding",
+"Take off the bra of a random girl while they have their clothes on using only your teeth",
+"You must act like the sex slave to the person to your right Doing whatever they say to do until your next turn",
+"Simulate a porno in front of the group while the rest direct. You must do everything the group says to do for 3 minutes",
+"Take off your trousers or skirt until your next turn",
+"Have a 3 –way kiss with the players to your right and left",
+"Put a wrapped piece of candy in your mouth and then unwrap it with any person of your choosing",
+"Make out with the person to the right ",
+"Receive a slap from the person to your left",
+"Let anyone of the opposite sex touch or put hands on/in your genitals",
+"Let the person opposite you tie you to a chair and do anything to you for 15 seconds. If you laugh, flinch or move at all you have to take off an article of clothing",
+"Twerk in only your underwear",
+"Call your best friend and ask the color of his/her underwear that day",
+"Give your partner’s private a peck",
+"Choose someone to give you a hickey on the neck, chest",
+"Do yoga poses in only your underwear",
+"Give a back rub the person to your right",
+"Go to the doorway and scream 'I am horny'",
+"Let someone tie your hands behind your back and tickle you for 15 secs. Every time you laugh, you have to take off a piece of clothing",
+"Put a hickey on the inner thigh of the person to your left",
+"Masturbate in front of the group (with your clothes on)",
+"Call the nearest police station and initiate phone sex with the officer who answers the call for 1 minute",
+"Flash the room for 3 seconds",
+"Let the person opposite you pick a color and you have to remove a piece of clothing of that color. If you do not have a clothing of that color, they have to keep calling colors until they call a color whose clothing you have on",
+"Text your crush and ask them to join you for a threesome",
+"Unhook the bra of the 3rd girl to your left",
+"Eat a trail of snacks from the room to the toilet seat",
+"Share a piece of gum with everyone without using your hands",
+"Give a 5 second french kiss to eveyone in the group",
+"Get fully naked until your next turn",
+"Do 3 yoga poses fully naked",
+"Have 2 other players play a game of 'Rock, Paper and Scissors'. You have to let the winner (best of 3 rounds) fondle any of your body part of their choosing",
+"Freeze your underwears for 20minutes and put them back on",
+"Beg another player to spank you on your naked butt while making sexy faces until they agree",
+"Sexily suck on a finger of the 5th person to your right",
+"Give the person opposite you head while they have their clothes on",
+"Let the room blindfold you and give you 5 body parts to kiss without telling you what or whose they are",
+"Let a random person feed your snacks and say 'Thank You Daddy' after every feeding",
+"Undress someone of the same sex",
+"Post 'I am coming, I am coming....' on your social media and a minute later post 'I just came, phew!' ",
+"Rub on your nipples until they become hard",
+"Grind on the person to your right for 20 secs ",
+"Let a random person of the opposite sex unzip your zipper while you maintain eye contact with them",
+"Take a sip of the water from the toilet using a teaspoon or a straw",
+"lick someone’s tongue"
+
+];
+
+    console.log(dareArr);
+
+
+    $('#truthButton').click(function(evt){
+
+    // define the containers we are targeting
+    var truth = $('#display').text();
+    
+    
+    //prevent browsers default action
+    evt.preventDefault();
+
+    //length of truth array;
+    var truthArrLength = truthArr.length;
+    
+    //random number for truth
+    var randomNumberTruth= Math.floor(Math.random()*truthArrLength);
+    
+    //Get a new truth
+	for(i=0;i<=truthArrLength;i++){
+        var newTruth = truthArr[randomNumberTruth];
+
+        //console.log(newTruth);
+      var timeAnimation = 300;
+      var paraContainer = $('#paraContainer');
+      //fade out animation with callback
+      paraContainer.fadeOut(timeAnimation, function(){
+        paraContainer.html('');
+				paraContainer.append('<p>'+newTruth+'</p>'+'<p id="display"></p>');
+        //fadein animation.
+        paraContainer.fadeIn(timeAnimation);
+      });  
+
+        break;
+    };
+
+   
+});
+
+$('#dareButton').click(function(evt){
+
+    // define the containers we are targeting
+    var dare = $('#display').text();
+
+    //prevent browsers default action
+    evt.preventDefault();
+
+    //length of dare array;
+    var dareArrLength = dareArr.length;
+
+    //random number for dare 
+    var randomNumberDare= Math.floor(Math.random()*dareArrLength);
+
+    //Get new dare
+     for(k=0;k<=dareArrLength;k++){
+        var newDare = dareArr[randomNumberDare];
+
+          //console.log(newDare);
+      var timeAnimation = 300;
+      var paraContainer = $('#paraContainer');
+      //fade out animation with callback
+      paraContainer.fadeOut(timeAnimation, function(){
+        paraContainer.html('');
+				paraContainer.append('<p>'+newDare+'</p>'+'<p id="display"></p>');
+        //fadein animation.
+        paraContainer.fadeIn(timeAnimation);
+      });  
+
+        break;
+    };
+});
+
+
+});
+
+    </script>
+
+</body>
+</html>
