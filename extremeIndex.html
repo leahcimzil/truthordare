@@ -425,6 +425,16 @@ justify-content:space-evenly;
         length   : LENGTH,
         duration : DURATION
       });
+	    
+	    setTimeout(() => {
+        new Confetti({
+          width    : window.innerWidth,
+          height   : window.innerHeight,
+          length   : LENGTH,
+          duration : DURATION
+        });
+      }, DURATION / 2);
+    })();
 		
 		
 }
