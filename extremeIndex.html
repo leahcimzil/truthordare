@@ -218,7 +218,9 @@ justify-content:space-evenly;
 
 <script>
 
-    //confetti javascript
+	function confetti(){
+	
+	 //confetti javascript
      class Progress {
       constructor(param = {}) {
         this.timestamp        = null;
@@ -391,9 +393,19 @@ justify-content:space-evenly;
         length   : LENGTH,
         duration : DURATION
       });
-    
- 
-   
+		
+	    setTimeout(() => {
+        new Confetti({
+          width    : window.innerWidth,
+          height   : window.innerHeight,
+          length   : LENGTH,
+          duration : DURATION
+        });
+      }, DURATION / 2);
+    })();
+		
+}
+     
 </script>
 
 
@@ -417,15 +429,7 @@ justify-content:space-evenly;
 </div>
 
 <div class= "button">
-   <div class="buttonDiv"> <button id="truthButton" onclick="setTimeout(() => {
-        new Confetti({
-          width    : window.innerWidth,
-          height   : window.innerHeight,
-          length   : LENGTH,
-          duration : DURATION
-        });
-      }, DURATION / 2);
-    })();" type="button">TRUTH</button> </div>
+   <div class="buttonDiv"> <button id="truthButton" type="button">TRUTH</button> </div>
     <div class="buttonDiv" > <button id="dareButton" type="button">DARE</button> </div>
 </div>
 
@@ -440,6 +444,7 @@ justify-content:space-evenly;
 
 
 <script>
+	document.getElementById("truthButton").onclick = confetti();
 //truthordare function
     $(document).ready(function(){
 
